@@ -1,0 +1,54 @@
+.over-height {
+    width: inherit;
+}
+
+.over-width {
+    height: inherit;
+}
+
+.image-button {
+    width: inherit;
+    height: inherit;
+    padding: 0;
+    border: none;
+}
+
+.image-wrapper {
+    width: inherit;
+    overflow: hidden;
+    transition: transform 0.2s ease-in;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .image-wrapper {
+        height: 140px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .image-wrapper {
+        height: 193.34px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .image-wrapper {
+        height: 233.34px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .over-width {
+        width: inherit;
+    }
+    .image-wrapper {
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
