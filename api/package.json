@@ -2,20 +2,28 @@
   "name": "img-store-api",
   "version": "1.0.0",
   "description": "Server for img-store app",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon --exec babel-node index.js --port 57689"
   },
   "author": "Azat Rashidov",
   "license": "ISC",
   "dependencies": {
-    "apollo-server-express": "^1.4.0",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "graphql": "^15.5.0",
-    "graphql-tools": "^7.0.2",
+    "apollo-server-koa": "^2.19.2",
+    "koa": "^2.13.1",
+    "koa-static": "^5.0.0",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/node": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "babel-plugin-inline-json-import": "^0.3.2",
+    "babel-plugin-root-import": "^6.6.0",
+    "nodemon": "^2.0.7"
   }
 }

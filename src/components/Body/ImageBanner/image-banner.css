@@ -11,10 +11,11 @@
     height: inherit;
     padding: 0;
     border: none;
+    background: none;
 }
 
 .image-wrapper {
-    width: inherit;
+    width: 100%;
     overflow: hidden;
     transition: transform 0.2s ease-in;
 }
@@ -26,19 +27,25 @@
 
 @media screen and (min-width: 768px) {
     .image-wrapper {
-        height: 140px;
+        height: 144px;
     }
 }
 
 @media screen and (min-width: 992px) {
     .image-wrapper {
-        height: 193.34px;
+        height: 197.34px;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .image-wrapper {
-        height: 233.34px;
+        height: 237.34px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .image-wrapper {
+        height: 277.34px;
     }
 }
 
@@ -50,5 +57,9 @@
         height: auto;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .image-wrapper:hover {
+        transform: none;
     }
 }

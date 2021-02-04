@@ -5,7 +5,7 @@ function getArrOfID(size) {
   for (let i = 0; i < size; i++) {
     arr.push({ id: uuidv4() })
   }
-  return JSON.stringify(arr)
+  return arr
 }
 
 console.log(getArrOfID(6))
