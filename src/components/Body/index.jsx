@@ -26,7 +26,11 @@ function Body() {
       cols.push(
         images[i] ? (
           <Col xs={12} md={4} className="image" key={images[i].id}>
-            <ImageBanner img={images[i].url} alt={images[i].title} />
+            <ImageBanner
+              img={images[i].url}
+              alt={images[i].title}
+              id={images[i].id}
+            />
           </Col>
         ) : null
       )

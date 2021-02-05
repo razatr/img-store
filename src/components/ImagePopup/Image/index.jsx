@@ -1,6 +1,8 @@
 import React from 'react'
 import './image.css'
 import { gql, useQuery } from '@apollo/client'
+import { observer } from 'mobx-react-lite'
+import store from '../../../store'
 
 const GET_IMAGE = gql`
   query($id: String) {
@@ -11,7 +13,8 @@ const GET_IMAGE = gql`
   }
 `
 
-function Image({ id = '41e5ee9f-0b1a-4d90-9e44-f2d218986e89' }) {
+function Image() {
+  const { openImage: id } = store
   const { loading, error, data } = useQuery(GET_IMAGE, {
     variables: { id }
   })
@@ -25,14 +28,17 @@ function Image({ id = '41e5ee9f-0b1a-4d90-9e44-f2d218986e89' }) {
   }
 
   if (data) {
+    const {
+      image: { title, url }
+    } = data
     return (
       <img
-        src="http://localhost:3001/img/forest-from-above.jpg"
-        alt="forest-from-above"
+        src={`http://localhost:3001${url}`}
+        alt={title}
         className="image-popup"
       />
     )
   }
 }
 
-export default Image
+export default observer(Image)

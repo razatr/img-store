@@ -1,6 +1,8 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
+import { observer } from 'mobx-react-lite'
 import Comment from './Comment'
+import store from '../../../store'
 
 const GET_COMMENTS = gql`
   query($id: String) {
@@ -13,7 +15,8 @@ const GET_COMMENTS = gql`
   }
 `
 
-function Comments({ id = '41e5ee9f-0b1a-4d90-9e44-f2d218986e89' }) {
+function Comments() {
+  const { openImage: id } = store
   const { loading, error, data } = useQuery(GET_COMMENTS, {
     variables: { id }
   })
@@ -40,4 +43,4 @@ function Comments({ id = '41e5ee9f-0b1a-4d90-9e44-f2d218986e89' }) {
   }
 }
 
-export default Comments
+export default observer(Comments)

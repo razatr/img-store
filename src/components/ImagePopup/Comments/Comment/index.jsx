@@ -1,7 +1,13 @@
 import React from 'react'
 
-function Comment({ text, author = '' }) {
-  return <div>{`${author} ${text}`}</div>
+function Comment({ text, author = 'Анонимный странник' }) {
+  return (
+    <div>
+      <span>{author}</span>
+      <br />
+      <span>{text}</span>
+    </div>
+  )
 }
 
 export default Comment
