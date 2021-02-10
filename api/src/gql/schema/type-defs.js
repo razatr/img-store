@@ -1,6 +1,6 @@
 export const typeDefs = `
   type Image {
-    id: String
+    id: ID!
     title: String
     url: String
     comments: [Comment]
@@ -12,7 +12,7 @@ export const typeDefs = `
   }
 
   type Comment {
-    id: String!
+    id: ID!
     text: String
   }
 `

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { observer } from 'mobx-react-lite'
+import closeIcon from 'bootstrap-icons/icons/x.svg'
 import './image-popup.css'
 import store from '../../store'
 import Image from './Image'
@@ -27,11 +28,17 @@ function ImagePopup() {
               <Col xs={12} md={9}>
                 <CommentForm />
                 <button
-                  className="image-popup__close"
+                  className="image-popup__close btn"
                   type="button"
                   onClick={() => store.setOpenImage('')}
                 >
-                  Close
+                  <img
+                    src={closeIcon}
+                    alt=""
+                    width="32"
+                    height="32"
+                    title="Bootstrap"
+                  />
                 </button>
               </Col>
               <Col xs={12} md={3} />

@@ -7,7 +7,6 @@ export const resolvers = {
   },
   Image: {
     comments: (parent) => {
-      console.log(parent)
       return comments.filter((comment) => parent.comments.includes(comment.id))
     }
   }

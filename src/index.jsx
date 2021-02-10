@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
+import { ApolloProvider, ApolloClient } from '@apollo/client'
+import cache from './gql-cache'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const client = new ApolloClient({
   uri: 'http://localhost:3001/graphql',
-  cache: new InMemoryCache()
+  cache
 })
 
 ReactDOM.render(

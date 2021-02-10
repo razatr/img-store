@@ -14,6 +14,16 @@
     top: 10px;
 }
 
+.image-popup__close:focus {
+    box-shadow: none;
+}
+
+.image-popup__close-icon {
+    width: 2em;
+    height: 2em;
+    vertical-align: -.1em;
+}
+
 .popup-decorator {
     position: absolute;
     top: 0;
